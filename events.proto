@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message Event {
+    oneof event {
+        SessionStarted sessionStarted = 1;
+        SessionEnded sessionEnded = 2;
+    }
+}
+
+message SessionStarted {
+    optional string name = 1;
+}
+
+message SessionEnded {
+    optional string name = 1;
+    optional bool success = 2;
+}
